@@ -1,7 +1,7 @@
 variable "role_name" {
-  type = string
+  type = list(string)
 }
 
 variable "policy_arn" {
-  type = string
+  type = list(string)
 }

@@ -27,7 +27,7 @@ resource "aws_iam_role" "role" {
         Condition = {
           StringEquals = {
             "${var.cluster_oidc_issuer}:aud" = "sts.amazonaws.com"
-            "${var.cluster_oidc_issuer}:sub" = "system:serviceaccount:${var.namespace}:${var.service_account_name}"
+            "${var.cluster_oidc_issuer}:sub" = "system:serviceaccount:${var.namespace[0]}:${var.service_account_name[0]}"
           }
         }
       }

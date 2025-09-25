@@ -12,8 +12,8 @@ resource "random_id" "suffix" {
 }
 
 resource "aws_iam_policy" "policy" {
-  name        = "bucket-permissions-policy-${var.bucket_name}-${random_id.suffix.hex}"
-  description = "Permissions policy for bucket ${var.bucket_name}"
+  name        = "bucket-permissions-policy-${var.bucket_name[0]}-${random_id.suffix.hex}"
+  description = "Permissions policy for bucket ${var.bucket_name[0]}"
 
   policy = jsonencode({
     Version = "2012-10-17"
@@ -24,8 +24,8 @@ resource "aws_iam_policy" "policy" {
           "s3:*"
         ]
         Resource = [
-          "arn:aws:s3:::${var.bucket_name}",
-          "arn:aws:s3:::${var.bucket_name}/*"
+          "arn:aws:s3:::${var.bucket_name[0]}",
+          "arn:aws:s3:::${var.bucket_name[0]}/*"
         ]
       }
     ]

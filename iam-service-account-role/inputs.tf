@@ -7,9 +7,9 @@ variable "cluster_oidc_issuer" {
 }
 
 variable "namespace" {
-  type = string
+  type = list(string)
 }
 
 variable "service_account_name" {
-  type = string
+  type = list(string)
 }

@@ -12,11 +12,11 @@ resource "kubernetes_annotations" "ebs-csi-sa" {
   kind        = "ServiceAccount"
 
   metadata {
-    name      = var.service_account_name
-    namespace = var.namespace
+    name      = var.service_account_name[0]
+    namespace = var.namespace[0]
   }
 
   annotations = {
-    "eks.amazonaws.com/role-arn" = var.iam_role_arn
+    "eks.amazonaws.com/role-arn" = var.iam_role_arn[0]
   }
 }

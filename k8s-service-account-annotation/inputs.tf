@@ -1,11 +1,11 @@
 variable "iam_role_arn" {
-  type = string
+  type = list(string)
 }
 
 variable "namespace" {
-  type = string
+  type = list(string)
 }
 
 variable "service_account_name" {
-  type = string
+  type = list(string)
 }
