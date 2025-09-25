@@ -12,5 +12,5 @@ resource "random_id" "suffix" {
 }
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = "${var.aws_s3_bucket_name}-${random_id.suffix.hex}"
+  bucket = "${var.prefix}-${random_id.suffix.hex}"
 }
